@@ -28,5 +28,13 @@ describe("Soldado", () =>{
     });
 })
 
+it("con el escudo 50% necesita 2 disparos para morir", ()=>{
+    const soldado = new Soldado(new Escudo(0.5));
+    soldado.recibirDisparo();
+    expect(soldado.estaVivo()).toBe(true);
+    soldado.recibirDisparo();
+    expect(soldado.estaVivo()).toBe(false);
+})
+
 //expect(lo que obtuve).toBe(lo que espera)
 
