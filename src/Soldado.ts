@@ -1,28 +1,8 @@
-export class Soldado {
-    constructor(
-        public salud: number,
-        public ataque: number
-    ){}
+import { UnidadCombate } from './UnidadCombate';
+import { Escudo } from './Escudo';
 
-
-//el Soldado dispara a otro soldado
-Disparar (objeto: Soldado): void{
-    //recibe el soldado de este soldado
-    objeto.recibirDisparo(this.ataque);
+export class Soldado extends UnidadCombate{
+    constructor(escudo?: Escudo) {
+        super(1, escudo);
+    }
 }
-
-//el soldado recibe un disparo
-recibirDisparo(ataque: number): void{
-    //sacamos vida
-    this.salud = this.salud - ataque;
-
-}
-
-//el estado del buque
-Estadovivo(): boolean{
-
-    //evaluamos el estado por true o false
-    return this.salud >0;
-}
-}
-

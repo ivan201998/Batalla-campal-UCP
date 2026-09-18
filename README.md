@@ -22,5 +22,5 @@
 
  Se podrá generar un arma diferente que tenga municiones (en cada uso las municiones se descuentan), al no tener más municiones el arma no hace daño. Queda por parte del alumno generar por lo menos 2 (dos) tipos de armas
 
- Imagen de Fernández Jose alejandro
+
 

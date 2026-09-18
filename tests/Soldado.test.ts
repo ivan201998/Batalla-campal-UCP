@@ -1,31 +1,32 @@
-import {test, expect} from "vitest";
-import { Soldado } from "../src/Soldado";
+import { describe, it, expect } from 'vitest';
+import { Soldado } from '../src/Soldado';
+import { Escudo } from '../src/Escudo';
 
+describe("Soldado", () =>{
+    it("empieza vivo", ()=> {
+        expect(new Soldado().estaVivo()).toBe(true);
+    });
 
-test("un Soldado dispara a otro Soldado", () => {
-    //creamos el Soldado que dispara
-    //salud 100
-    //ataque 100
-    var soldado1 = new Soldado(100,100);
+    it("muere al recibir un disparo", ()=> {
+        const soldado = new Soldado();
+        soldado.recibirDisparo();
+        expect(soldado.estaVivo()).toBe(false);
 
-    //creamos el Soldado que recive el disparo
-    var soldado2 = new Soldado(100,100);
+    });
 
-    //Soldado dispara al Soldado
-    //soldado1.Disparar(soldado2);
+    it("un disparo mata a otro solado", ()=>{
+        const s1 = new Soldado();
+        const s2 = new Soldado();
 
-    //validamos la salud del Soldado baje 100 a 0
-    //expect(soldado2.salud).toBe(0);
-    //get o set
+        expect(s2.estaVivo()).toBe(true);//antes
 
-    /*
-    var s1 = new soldado()
-    var s2 = new soldado() 
-    probar antes antes el true y false
-    s1.disparar(s2)
-    validar s2.estavivo()
-    */
-    
-    //ya no esta vivo
-    //expect(soldado2.Estadovivo()).toBe(false);
+        s1.disparar(s2);
+
+        expect(s2.estaVivo()).toBe(false);//despues
+        expect(s1.estaVivo()).toBe(true);//el que dispara no se afecta a si mismo
+
+    });
 })
+
+//expect(lo que obtuve).toBe(lo que espera)
+
