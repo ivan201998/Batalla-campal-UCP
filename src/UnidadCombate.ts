@@ -7,12 +7,20 @@ export abstract class UnidadCombate {
         this.vida = vidaInicial;
     }
 
+    private getVida(): number{
+        return this.vida;
+    }
+
+    private setVida(valor: number): void{
+        this.vida = valor;
+    }
+
     recibirDisparo(): void{
-        this.vida -= this.escudo.aplicar(1);//si no va el - se rompe porque no decrementa
+        this.setVida(this.getVida() - this.escudo.aplicar(1));
     }
 
     estaVivo(): boolean {
-        return this.vida >0;
+        return this.getVida() > 0;
 
     }
 
