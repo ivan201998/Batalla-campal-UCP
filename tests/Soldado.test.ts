@@ -35,6 +35,8 @@ it("con el escudo 50% necesita 2 disparos para morir", ()=>{
     soldado.recibirDisparo();
     expect(soldado.estaVivo()).toBe(false);
 })
+//disparos necesarios = vida ÷ daño por disparo, donde daño por disparo
+//1 ÷ 0.5 = 2
 
 //expect(lo que obtuve).toBe(lo que espera)
 
