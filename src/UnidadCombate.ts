@@ -1,6 +1,8 @@
 import { Escudo } from './Escudo';
 //para agregar pistola
 import { Pistola } from './Pistola';
+//para agregar granada
+import { Granada } from './Granada';
 
 export abstract class UnidadCombate {
     private vida: number;
@@ -36,4 +38,10 @@ export abstract class UnidadCombate {
         // arma   = pistola
         objeto.setVida(objeto.getVida()- objeto.escudo.aplicar(arma.disparar()));
     }
+
+    //metodo granada
+    tirargranada(objeto: UnidadCombate, arma: Granada): void{
+        objeto.setVida(objeto.getVida() - objeto.escudo.aplicar(arma.lanzar()));
+    }
+
 }

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { Pistola } from '../src/Pistola';
 
 describe('Pistola', () => {
-  it('hace menos daño que la Bazuca, pero tiene más municion', () => {
+  it('la pistola necesita gastas mas municion que la granada para matar ', () => {
     const pistola = new Pistola();
     expect(pistola.disparar()).toBe(1);
   });
