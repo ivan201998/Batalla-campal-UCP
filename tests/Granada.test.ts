@@ -4,7 +4,7 @@ import { Granada } from '../src/Granada';
 describe('granada', () => {
   it('lanzar hace 1 de daño', () => {
     const granada = new Granada();
-    expect(granada.lanzar()).toBe(3);
+    expect(granada.lanzar()).toBe(1);
 
   });
 
