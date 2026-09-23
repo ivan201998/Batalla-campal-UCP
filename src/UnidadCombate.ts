@@ -39,4 +39,10 @@ export abstract class UnidadCombate {
         objeto.recibirDisparo();
 
     }
+
+    dispararRyD(objeto: Soldado): void {
+
+        objeto.recibirDisparoRyD();
+
+    }
 }

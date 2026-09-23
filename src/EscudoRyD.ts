@@ -15,11 +15,15 @@ export class EscudoRyD {
 
     usarEscudo(): number {
 
-        var valor = this.proteccion;
+        // Vale 1 mientras tenga durabilidad.
+        var activo = Number(this.durabilidad > 0);
 
-        this.proteccion = 0;
+        // Se gasta un punto por uso.
+        this.durabilidad = this.durabilidad - activo;
 
-        return valor;
+        // Si está activo devuelve la protección.
+        // Si se terminó devuelve 0.
+        return this.proteccion * activo;
     }
     
     getDurabilidad(): number{

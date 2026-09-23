@@ -40,6 +40,16 @@ export class Soldado extends UnidadCombate {
         );
 
     }
+
+    recibirDisparoRyD(): void {
+
+        var proteccion = this.escudoRyD.usarEscudo();
+
+        this.setVida(
+            this.getVida() - (1 - proteccion)
+        );
+
+    }
 }
 
 //super llama al constructor de la clase padre, UnidadCombate
