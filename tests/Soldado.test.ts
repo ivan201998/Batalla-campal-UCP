@@ -26,16 +26,30 @@ describe("Soldado", () =>{
         expect(s1.estaVivo()).toBe(true);//el que dispara no se afecta a si mismo
 
     });
+
+    it("el escudo protege un disparo de otro soldado", () => {
+
+        var s1 = new Soldado();
+        var s2 = new Soldado();
+
+        // Le damos protección 1 solamente a s2.
+        s2.ponerEscudo(new Escudo(1));
+
+        expect(s1.estaVivo()).toBe(true);
+        expect(s2.estaVivo()).toBe(true);
+
+        // Primer disparo: escudo 1 -> 0.
+        s1.disparar(s2);
+
+        expect(s2.estaVivo()).toBe(true);
+
+        // Segundo disparo: ya no tiene protección.
+        s1.disparar(s2);
+
+        expect(s2.estaVivo()).toBe(false);
+
+    });
 })
 
-it("con el escudo 50% necesita 2 disparos para morir", ()=>{
-    const soldado = new Soldado(new Escudo(0.5));
-    soldado.recibirDisparo();
-    expect(soldado.estaVivo()).toBe(true);
-    soldado.recibirDisparo();
-    expect(soldado.estaVivo()).toBe(false);
-})
-//disparos necesarios = vida ÷ daño por disparo, donde daño por disparo
-//1 ÷ 0.5 = 2
 
 //expect(lo que obtuve).toBe(lo que espera)

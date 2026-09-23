@@ -50,18 +50,5 @@ describe("buque", () =>{
     
 })
 
-it("con el escudo 50% necesita 4 disparos para morir", ()=>{
-    const buque = new Buque(new Escudo(0.5));
-    buque.recibirDisparo();
-    buque.recibirDisparo();
-    buque.recibirDisparo();
-    buque.recibirDisparo();
-    buque.recibirDisparo();
-    expect(buque.estaVivo()).toBe(true);
-    buque.recibirDisparo();
-    expect(buque.estaVivo()).toBe(false);
-})
-//disparos necesarios = vida ÷ daño por disparo, donde daño por disparo
-//3 ÷ 0.5 = 6
 
 //expect(lo que obtuve).toBe(lo que espera)

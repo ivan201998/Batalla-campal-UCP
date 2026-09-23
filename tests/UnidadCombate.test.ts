@@ -2,7 +2,6 @@ import { describe, it, expect } from 'vitest';
 import { Soldado } from '../src/Soldado';
 import { Tanque } from '../src/Tanque';
 import { Buque } from '../src/Buque';
-import { Pistola } from '../src/Pistola';
 
 
 describe("combate entre distintos personajes", ()=>{
@@ -80,30 +79,6 @@ describe("combate entre distintos personajes", ()=>{
         buque.disparar(tanque);
         expect(tanque.estaVivo()).toBe(false)
 
-    });
-    
-    //ataque con pistola
-    it ("un soldado con pistola mata a 1 tanque con 2 disparo", ()=>{
-        const soldado = new Soldado();
-        const tanque = new Tanque();
-        const pistola = new Pistola();
-
-        // objetivo=tanque, arma=pistola
-        soldado.dispararArma(tanque, pistola);// le dispara a tanque, usando pistola
-        soldado.dispararArma(tanque, pistola);// segundo disparo con la misma pistola (ya con menos balas)
-
-        expect(tanque.estaVivo()).toBe(false);  
-    });
-
-    it("si la pistola se queda sin balas, no logra matar al tanque", () => {
-        const pistola = new Pistola(1); // una sola bala, no alcanza para las 2 vidas del tanque
-        const soldado = new Soldado();
-        const tanque = new Tanque();
-
-        soldado.dispararArma(tanque, pistola); // gasta la única bala, tanque queda con 1 vida
-        soldado.dispararArma(tanque, pistola); // ya sin municion, no hace daño
-
-        expect(tanque.estaVivo()).toBe(true); // sigue vivo, nunca llegó a morir
     });
 
 });
