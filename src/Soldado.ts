@@ -1,9 +1,11 @@
 import { UnidadCombate } from './UnidadCombate';
 import { Escudo } from './Escudo';
+import { EscudoRyD } from './EscudoRyD';
 
 export class Soldado extends UnidadCombate {
 
     private escudo: Escudo;
+    private escudoRyD: EscudoRyD;
 
     constructor() {
 
@@ -13,11 +15,19 @@ export class Soldado extends UnidadCombate {
         // Empieza SIN protección.
         this.escudo = new Escudo();
 
+        this.escudoRyD = new EscudoRyD();
+
     }
 
     ponerEscudo(escudo: Escudo): void {
 
         this.escudo = escudo;
+
+    }
+
+    ponerEscudoRyD(escudoRyD: EscudoRyD): void {
+
+        this.escudoRyD = escudoRyD;
 
     }
 

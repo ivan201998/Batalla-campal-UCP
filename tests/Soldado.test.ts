@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { Soldado } from '../src/Soldado';
 import { Escudo } from '../src/Escudo';
+import { EscudoRyD } from '../src/EscudoRyD';
 
 describe("Soldado", () =>{
     it("empieza vivo", ()=> {
@@ -44,6 +45,41 @@ describe("Soldado", () =>{
         expect(s2.estaVivo()).toBe(true);
 
         // Segundo disparo: ya no tiene protección.
+        s1.disparar(s2);
+
+        expect(s2.estaVivo()).toBe(false);
+
+    });
+
+    it("el escudo incorpora resistencia y durabilidad", () => {
+
+        var s1 = new Soldado();
+        var s2 = new Soldado();
+
+        // protección = 1
+        // durabilidad = 3
+        // resistencia = 2
+        s2.ponerEscudoRyD(new EscudoRyD(1, 3, 2));
+
+        expect(s2.estaVivo()).toBe(true);
+
+        // Primer disparo.
+        s1.disparar(s2);
+
+        expect(s2.estaVivo()).toBe(true);
+
+        // Segundo disparo.
+        s1.disparar(s2);
+
+        expect(s2.estaVivo()).toBe(true);
+
+        // Tercer disparo.
+        s1.disparar(s2);
+
+        expect(s2.estaVivo()).toBe(true);
+
+        // Cuarto disparo:
+        // la durabilidad ya se gastó.
         s1.disparar(s2);
 
         expect(s2.estaVivo()).toBe(false);
