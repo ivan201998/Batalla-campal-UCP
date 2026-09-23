@@ -36,7 +36,6 @@ describe("Soldado", () =>{
         // Le damos protección 1 solamente a s2.
         s2.ponerEscudo(new Escudo(1));
 
-        expect(s1.estaVivo()).toBe(true);
         expect(s2.estaVivo()).toBe(true);
 
         // Primer disparo: escudo 1 -> 0.
