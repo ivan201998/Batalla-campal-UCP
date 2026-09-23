@@ -2,7 +2,7 @@ import { UnidadCombate } from "./UnidadCombate";
 import { Escudo } from "./Escudo";
 
 export class Tanque extends UnidadCombate{
-    constructor(){//? Si al crear el Soldado no le pasás ninguno (new Soldado())
+    constructor(){
         super(2);
     }
 }

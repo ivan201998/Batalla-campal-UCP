@@ -1,7 +1,4 @@
 import { Escudo } from './Escudo';
-//para agregar pistola
-import { Pistola } from './Pistola';
-
 
 export abstract class UnidadCombate {
 
