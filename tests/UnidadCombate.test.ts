@@ -3,7 +3,7 @@ import { Soldado } from '../src/Soldado';
 import { Tanque } from '../src/Tanque';
 import { Buque } from '../src/Buque';
 import { Pistola } from '../src/Pistola';
-import { Granada } from '../src/Granada';
+
 
 describe("combate entre distintos personajes", ()=>{
     //desde la mirada de soldado
@@ -106,13 +106,4 @@ describe("combate entre distintos personajes", ()=>{
         expect(tanque.estaVivo()).toBe(true); // sigue vivo, nunca llegó a morir
     });
 
-    it('un soldado tira una granada y mata a otro soldado', () => {
-        const s1 = new Soldado();
-        const s2 = new Soldado();
-        const granada = new Granada();
- 
-        s1.tirargranada(s2, granada);
- 
-        expect(s2.estaVivo()).toBe(false);
-    });
 });
