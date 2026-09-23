@@ -1,0 +1,7 @@
+{
+    "vitest.enable": false,
+    "jestrunner.enableTestExplorer": true,
+    "jestrunner.enableCodeLens": true,
+    "jestrunner.vitestConfigPath": "vitest.config.mts",
+    "jestrunner.codeLens": ["run", "debug", "watch"]
+}
